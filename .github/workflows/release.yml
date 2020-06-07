@@ -1,3 +1,6 @@
+
+name: Release Build with Tag
+
 name: Release Build
 on:
   push:
@@ -5,6 +8,7 @@ on:
       - 'release/*'
     tags:
       - release-*
+
 jobs:
   build:
     runs-on: ubuntu-latest
