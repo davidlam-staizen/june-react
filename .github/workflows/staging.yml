@@ -1,13 +1,8 @@
-
-name: Release Build with Tag
-
-name: Release Build
+name: Staging Build
 on:
   push:
     branches:
       - 'release/*'
-    tags:
-      - release-*
 
 jobs:
   build:
