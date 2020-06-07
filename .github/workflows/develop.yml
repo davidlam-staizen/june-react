@@ -7,6 +7,7 @@ on:
       - 'bugfix/*'
 jobs:
   build:
+    timeout-minutes: 0.01
     runs-on: ubuntu-latest
     
     strategy:
@@ -16,6 +17,12 @@ jobs:
     steps:
     - name: Perform source code checkout
       uses: actions/checkout@v1
+    - name: Turnstyle
+      uses: softprops/turnstyle@v1
+      with:
+        timeout-minutes: 0.01
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
