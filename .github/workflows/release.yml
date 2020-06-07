@@ -1,8 +1,14 @@
+
 name: Release Build with Tag
+
+name: Release Build
 on:
   push:
+    branches:
+      - 'release/*'
     tags:
-      - 'release-*'
+      - release-*
+
 jobs:
   build:
     runs-on: ubuntu-latest
